@@ -1,0 +1,42 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container">
+    <div class="navbar-content">
+      <!-- Logo -->
+      <a routerLink="/" class="logo">
+        <i class="bi bi-rocket-takeoff"></i>
+        <span>SocialGrowth</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links desktop-nav">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a (click)="scrollToSection('about')">About Us</a>
+        <a (click)="scrollToSection('vision-mission')">Vision & Mission</a>
+        <a (click)="scrollToSection('pricing')">Prices</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions desktop-nav">
+        <a routerLink="/login" class="btn-login">Login</a>
+        <a routerLink="/register" class="btn btn-primary">Register</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <i class="bi" [ngClass]="isMobileMenuOpen ? 'bi-x' : 'bi-list'"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" [class.open]="isMobileMenuOpen">
+      <div class="mobile-nav-links">
+        <a routerLink="/" (click)="closeMobileMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a (click)="scrollToSection('about')">About Us</a>
+        <a (click)="scrollToSection('vision-mission')">Vision & Mission</a>
+        <a (click)="scrollToSection('pricing')">Prices</a>
+        <a routerLink="/login" (click)="closeMobileMenu()">Login</a>
+        <a routerLink="/register" (click)="closeMobileMenu()" class="btn btn-primary mt-3">Register</a>
+      </div>
+    </div>
+  </div>
+</nav>

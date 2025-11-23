@@ -1,0 +1,67 @@
+<section id="vision-mission" class="vision-mission-section section">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Vision & <span class="gradient-text">Mission</span></h2>
+      <p class="section-subtitle">
+        Driving digital growth with purpose and passion
+      </p>
+    </div>
+
+    <!-- Vision & Mission Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-6">
+        <div class="vm-card vision-card">
+          <div class="vm-icon">
+            <i class="bi" [ngClass]="vision.icon"></i>
+          </div>
+          <h3 class="vm-title">{{vision.title}}</h3>
+          <p class="vm-description">{{vision.description}}</p>
+          <div class="vm-decoration"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="vm-card mission-card">
+          <div class="vm-icon">
+            <i class="bi" [ngClass]="mission.icon"></i>
+          </div>
+          <h3 class="vm-title">{{mission.title}}</h3>
+          <p class="vm-description">{{mission.description}}</p>
+          <div class="vm-decoration"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="values-section">
+      <h3 class="text-center mb-4">Our Core Values</h3>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6" *ngFor="let value of values">
+          <div class="value-card">
+            <div class="value-icon-wrapper">
+              <div class="value-icon">
+                <i class="bi" [ngClass]="value.icon"></i>
+              </div>
+            </div>
+            <h4 class="value-title">{{value.title}}</h4>
+            <p class="value-description">{{value.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-box text-center mt-5">
+      <h3>Ready to Grow Your Social Media?</h3>
+      <p>Join thousands of satisfied customers and start your growth journey today</p>
+      <div class="cta-buttons">
+        <a routerLink="/register" class="btn btn-primary btn-lg me-3">
+          <i class="bi bi-person-plus me-2"></i>Get Started Now
+        </a>
+        <a (click)="scrollToPricing()" class="btn btn-secondary btn-lg">
+          <i class="bi bi-tag me-2"></i>View Pricing
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

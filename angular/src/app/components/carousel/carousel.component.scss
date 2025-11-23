@@ -1,0 +1,259 @@
+.carousel-section {
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+
+  @media (max-width: 768px) {
+    height: 700px;
+  }
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &.gradient-youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+  }
+
+  &.gradient-facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0d5dbf 100%);
+  }
+
+  &.gradient-instagram {
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .content-col {
+    z-index: 2;
+  }
+
+  .slide-content {
+    color: white;
+    animation: slideInLeft 0.8s ease-out;
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .slide-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .slide-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+  }
+
+  .slide-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 500px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .slide-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .btn {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      
+      .btn {
+        width: 100%;
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  .icon-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .slide-icon {
+    animation: float 3s ease-in-out infinite;
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    i {
+      font-size: 20rem;
+      color: rgba(255, 255, 255, 0.15);
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+
+      @media (max-width: 1200px) {
+        font-size: 15rem;
+      }
+    }
+  }
+}
+
+// Navigation Arrows
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 1.5rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &.prev {
+    left: 2rem;
+  }
+
+  &.next {
+    right: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+
+    &.prev {
+      left: 1rem;
+    }
+
+    &.next {
+      right: 1rem;
+    }
+  }
+}
+
+// Indicators
+.indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+      transform: scale(1.2);
+    }
+
+    &.active {
+      background: white;
+      width: 40px;
+      border-radius: 10px;
+    }
+  }
+}

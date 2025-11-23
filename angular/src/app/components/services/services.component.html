@@ -1,0 +1,70 @@
+<section id="about" class="services-section section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
+      <p class="section-subtitle">
+        We provide reliable and effective social media growth solutions tailored to your needs. 
+        Choose the platform that matters most to you and watch your presence grow.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let service of services">
+        <div class="service-card" [class]="'service-card-' + service.color">
+          <div class="service-icon">
+            <i class="bi" [ngClass]="service.icon"></i>
+          </div>
+          <h3 class="service-title">{{service.title}}</h3>
+          <p class="service-description">{{service.description}}</p>
+          
+          <ul class="service-features">
+            <li *ngFor="let feature of service.features">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{feature}}</span>
+            </li>
+          </ul>
+
+          <a routerLink="/register" class="btn btn-service">
+            Get Started
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="why-choose-us mt-5 pt-5">
+      <h3 class="text-center mb-4">Why Choose Our Services?</h3>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-box">
+            <i class="bi bi-shield-check"></i>
+            <h4>100% Safe</h4>
+            <p>Secure and compliant with platform guidelines</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-box">
+            <i class="bi bi-people"></i>
+            <h4>Real Users</h4>
+            <p>Genuine engagement from active accounts</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-box">
+            <i class="bi bi-lightning-charge"></i>
+            <h4>Fast Delivery</h4>
+            <p>Quick results without compromising quality</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-box">
+            <i class="bi bi-headset"></i>
+            <h4>24/7 Support</h4>
+            <p>Always here to help you succeed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
